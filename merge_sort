@@ -1,0 +1,31 @@
+def mergesort(l):
+    m=len(l)//2
+    if len(l)>1:
+        l_list=l[:m]
+        r_list=l[m:]
+        mergesort(l_list)
+        mergesort(r_list)
+        i=0
+        j=0
+        k=0
+        while i<len(l_list) and j<len(r_list):
+            if l_list[i]<r_list[j]:
+                l[k]=l_list[i]
+                i+=1
+                k+=1
+            else:
+                l[k]=r_list[j]
+                j+=1
+                k+=1
+        while i<len(l_list):
+            l[k]=l_list[i]
+            i+=1
+            k+=1
+        while j<len(r_list):
+            l[k]=r_list[j]
+            j+=1
+            k+=1
+    
+l=[8,7,2,5,5,4,4,6,2,1]
+mergesort(l)
+print(l)
