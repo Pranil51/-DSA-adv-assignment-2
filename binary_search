@@ -1,0 +1,18 @@
+def binary_search(l, findnumber, low, high):
+    print('bin search',low,high)
+    if low > high :
+        print('not found')
+        return
+    mid= (low+high)//2
+    if l[mid] == findnumber:
+        print('found')
+    else:
+        if findnumber > l[mid]:
+            low = mid + 1
+            binary_search(l, findnumber, low, high)
+        else:
+            high = mid - 1
+            binary_search(l, findnumber, low, high)
+l = [5,7,9,13,14,18,29,100,310,12,45,5,43,87,765]
+binary_search(sorted(l), 87, 0, len(l))
+len(l)            
