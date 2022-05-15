@@ -1,0 +1,16 @@
+def sort1(l):    
+    a=0
+    b=0
+    for i in range(len(l)-1):
+        for j in range(len(l)-i-1):                 
+            while ord(l[j][a])==ord(l[j+1][b]):
+                if len(l[j+1])==b+1 and len(l[j])>a+1:  
+                    l[j],l[j+1]=l[j+1],l[j]
+                    break
+                a+=1
+                b+=1
+            if ord(l[j][a]) > ord(l[j+1][b]):
+                l[j],l[j+1]=l[j+1],l[j]            
+    return(l)
+print(sort1(["aasd","Aaa","B","baw"]))
+print(sorted(["aasd","Aa","B","baw"]))
